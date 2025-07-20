@@ -1,0 +1,12 @@
+最终用户的公司名称,合同金额,服务期限,买方的公司地址,纳税人识别号,银行信息
+"The final user's company name extracted from the contract is:
+
+**众信旅游集团股份有限公司**","The contract amount in yuan is 30,000 yuan (thirty thousand yuan).","The service term or validity period of the contract is:
+
+**2023年12月1日 - 2024年11月30日**",/,"The taxpayer identification number (纳税人识别号) extracted from the contract text is:
+
+**91110000101126585H**","乙方的银行账户信息如下：
+
+- **户名**: 北京信诺时代科技发展有限公司
+- **开户行**: 工行海淀支行营业部
+- **账号**: 0200049609200077319"

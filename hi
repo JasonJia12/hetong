@@ -1,0 +1,28 @@
+from openai import AzureOpenAI
+import streamlit as st
+from pdf2image import convert_from_bytes
+import pytesseract
+from PIL import Image
+import pandas as pd
+import os
+
+# Initialize the AzureOpenAI client
+client = AzureOpenAI(
+    api_key="f03dc7146838448a88e59f32363ab9b7",
+    api_version="2023-05-15",
+    azure_endpoint="https://jcyopenai2.openai.azure.com/"
+)
+
+deployment_name = "jcy4o"
+
+print('Sending a test completion job')
+sales_contract_prompts = {
+    "最终用户的公司名称": "Please extract the final user's company name from this contract text.",
+    "合同金额": "Please extract the contract amount in yuan from this contract text.",
+    "协议期限": "Please extract the agreement period from this contract text.",
+    "买方的公司地址": "Please extract the buyer's company address from this contract text.",
+    "纳税人识别号": "Please extract the taxpayer identification number from this contract text.",
+    "开户行名称": "Please extract the name of the bank from this contract text."
+}
+response = client.chat.completions.create(model=deployment_name, messages=sales_contract_prompts, max_tokens=10, stream=False)
+print(start_phrase+response.to_json())
